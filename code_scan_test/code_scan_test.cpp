@@ -13,7 +13,7 @@ int* calc(char buf[])
 int main()
 {
 	char buf[] = "Hello World!"; // 文字列を格納するバッファ
-	for (int i = 0; i < sizeof(buf) + 1; ++i)
+	for (int i = 0; i < sizeof(buf) + 2; ++i)
 	{
 		printf("%c", buf[i]); // バッファの内容を1文字ずつ出力
 	}
