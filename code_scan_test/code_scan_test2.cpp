@@ -13,11 +13,6 @@ int getlength(char buf[])
 int main()
 {
 	char buf[] = "Hello World!"; // 文字列を格納するバッファ
-	for (int i = 0; i < 30; ++i)
-	{
-		printf("%c", buf[i]); // バッファの内容を1文字ずつ出力
-	}
-	printf("\n");
 
 	printf("size: %d, %s\n", getlength(buf));
 

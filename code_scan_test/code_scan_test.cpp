@@ -3,12 +3,6 @@
 
 #include <iostream>
 
-int getlength(char buf[])
-{
-	//めちゃくちゃ
-	int size = sizeof(buf);
-	return size;
-}
 
 int* calc(char buf[])
 {
@@ -20,15 +14,8 @@ int* calc(char buf[])
 int main()
 {
 	char buf[] = "Hello World!"; // 文字列を格納するバッファ
-	for (int i = 0; i < 30; ++i)
-	{
-		printf("%c", buf[i]); // バッファの内容を1文字ずつ出力
-	}
-	printf("\n");
 
 	printf("size: %d\n", *calc(buf));
-
-	printf("size: %d\n", getlength(buf));
 
 	return 0;
 }
