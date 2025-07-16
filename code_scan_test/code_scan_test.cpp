@@ -3,6 +3,13 @@
 
 #include <iostream>
 
+int* calc(char buf[])
+{
+	//めちゃくちゃ
+	int size = sizeof(buf);
+	return &size;
+}
+
 int main()
 {
 	char buf[] = "Hello World!"; // 文字列を格納するバッファ
@@ -11,6 +18,7 @@ int main()
 		printf("%c", buf[i]); // バッファの内容を1文字ずつ出力
 	}
 	printf("\n");
+	printf("size: %d\n", *calc(buf));
     return 0;
 }
 
