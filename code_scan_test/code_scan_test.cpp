@@ -4,12 +4,12 @@
 #include <iostream>
 
 
-int* calc(char buf[])
-{
-	//めちゃくちゃ
-	int size = sizeof(buf);
-	return &size;
-}
+//int* calc(char buf[])
+//{
+//	//めちゃくちゃ
+//	int size = sizeof(buf);
+//	return &size;
+//}
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
 	}
 	printf("\n");
 
-	printf("size: %d\n", *calc(buf));
+	//printf("size: %d\n", *calc(buf));
 
 	return 0;
 }
