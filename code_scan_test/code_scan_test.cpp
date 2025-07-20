@@ -13,7 +13,13 @@ int* calc(char buf[])
 
 int main()
 {
-	char buf[] = "Hello World!"; // 文字列を格納するバッファ
+	char buf[] = "Hello World!";
+
+	for (int i = 0; i < 14; ++i)
+	{
+		printf("%c", buf[i]);
+	}
+	printf("\n");
 
 	printf("size: %d\n", *calc(buf));
 
