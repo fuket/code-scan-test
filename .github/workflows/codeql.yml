@@ -87,7 +87,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - if: matrix.build-mode == 'manual'
-      shell: cmd
+      #shell: cmd
       run: |
         msbuild /t:rebuild /p:Platform="x64" /p:Configuration="Debug" code_scan_test.sln
 
