@@ -86,6 +86,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       uses: microsoft/setup-msbuild@v2
 
+    - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
         msbuild /t:rebuild /p:Platform="x64" /p:Configuration="Debug" "${GITHUB_WORKSPACE}\code-scan-test\code_scan_test.sln"
