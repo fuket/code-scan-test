@@ -89,7 +89,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: cmd
       run: |
-        msbuild /t:rebuild /p:Platform="x64" /p:Configuration="Debug" "${GITHUB_WORKSPACE}\code-scan-test\code_scan_test.sln"
+        msbuild /t:rebuild /p:Platform="x64" /p:Configuration="Debug" code_scan_test.sln
 
       # shell: bash
       # run: |
