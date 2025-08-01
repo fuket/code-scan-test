@@ -50,10 +50,13 @@ jobs:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
 
+      - name: Add msbuild to PATH for Profiler build
+        uses: microsoft/setup-msbuild@6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce # v2.0.0
+
       - name: Build
-        shell: cmd
+        shell: powershell
         run: |
-          "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars32.bat" && set Platform=&& type NUL && msbuild D:\a\code-scan-test\code-scan-test\code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug"
+          MSBuild.exe D:\a\code-scan-test\code-scan-test\code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug"
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
