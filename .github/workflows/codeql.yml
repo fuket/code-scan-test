@@ -37,7 +37,7 @@ jobs:
       matrix:
         include:
         - language: c-cpp
-      #   build-mode: manual
+          build-mode: manual
 
     steps:
       - name: Checkout repository
@@ -48,15 +48,16 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-      #    build-mode: ${{ matrix.build-mode }}
+          build-mode: ${{ matrix.build-mode }}
 
       - name: Add msbuild to PATH for Profiler build
         uses: microsoft/setup-msbuild@6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce # v2.0.0
 
       - name: Build
+        working-directory: ${{env.GITHUB_WORKSPACE}}
         shell: powershell
         run: |
-          MSBuild.exe D:\a\code-scan-test\code-scan-test\code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug" /p:UseSharedCompilation=false
+          MSBuild.exe code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug" /p:UseSharedCompilation=false
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
