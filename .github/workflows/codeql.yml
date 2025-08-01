@@ -56,7 +56,7 @@ jobs:
       - name: Build
         shell: powershell
         run: |
-          MSBuild.exe D:\a\code-scan-test\code-scan-test\code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug"
+          MSBuild.exe D:\a\code-scan-test\code-scan-test\code_scan_test.sln /t:rebuild /p:Platform="x64" /p:Configuration="Debug" /p:UseSharedCompilation=false
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
