@@ -11,6 +11,11 @@ int* calc(char buf[])
 	return &size;
 }
 
+void copy(wchar_t* buf, const size_t bufSize, const char* str)
+{
+	mbstowcs_s(nullptr, buf, 64, str, strlen(str));
+}
+
 int main()
 {
 	char buf[] = "Hello World!";
@@ -22,6 +27,11 @@ int main()
 	printf("\n");
 
 	printf("size: %d\n", *calc(buf));
+
+	wchar_t wbuf[5];
+	copy(wbuf, 5, "abc");
+
+	wprintf(L"wbuf: %s", wbuf);
 
 	return 0;
 }
