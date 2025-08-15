@@ -4,12 +4,12 @@
 #include <iostream>
 
 
-int* calc(char buf[])
-{
-	//めちゃくちゃ
-	int size = sizeof(buf);
-	return &size;
-}
+//int* calc(char buf[])
+//{
+//	//めちゃくちゃ
+//	int size = sizeof(buf);
+//	return &size;
+//}
 
 void copy(wchar_t* buf, const size_t bufSize, const char* str)
 {
@@ -18,15 +18,15 @@ void copy(wchar_t* buf, const size_t bufSize, const char* str)
 
 int main()
 {
-	char buf[] = "Hello World!";
+	//char buf[] = "Hello World!";
 
-	for (int i = 0; i < 14; ++i)
-	{
-		printf("%c", buf[i]);
-	}
-	printf("\n");
+	//for (int i = 0; i < 14; ++i)
+	//{
+	//	printf("%c", buf[i]);
+	//}
+	//printf("\n");
 
-	printf("size: %d\n", *calc(buf));
+	//printf("size: %d\n", *calc(buf));
 
 	wchar_t wbuf[5];
 	copy(wbuf, 5, "abc");
